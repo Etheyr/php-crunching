@@ -3,19 +3,19 @@
 
 $string = file_get_contents("dictionnaire.txt", FILE_USE_INCLUDE_PATH);
 $dico = explode("\n", $string);
-$stringW = array();
-$w = "w";
+$stringQ = array();
+$q = "q";
 
 foreach ($dico as $string) {
 
-	if (strpos($string , $w) !== false) {
+	if (substr($string , -1) == $q) {
 
-		array_push($stringW, $string);
+		array_push($stringQ, $string);
 
 	}
 }
 
-echo "<h1>".count($stringW)."</h1>"; 
+echo "<h1>".count($stringQ)."</h1>"; 
 
 
 
