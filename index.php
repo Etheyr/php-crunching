@@ -92,10 +92,23 @@ $top = $brut["feed"]["entry"]; # liste de films
 			<tr>
 				<th><h1>Le classement de Gravity</h1></th>
 			</tr>
-			
 
-		</table>
+			<?php 
+			foreach($top as $value):
+				if($value['im:name']['label'] === 'Gravity'){
+					
+					?>
+
+					<tr>
+						<td><h2><?php echo array_search($value, $top)+1;?></h2></td>
+					</tr>
+
+					<?php
+				} endforeach;
+				?>
+
+			</table>
 
 
-	</body>
-	</html>
+		</body>
+		</html>
